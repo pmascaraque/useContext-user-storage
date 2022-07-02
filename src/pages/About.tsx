@@ -1,5 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { UserContext } from "../UserContext";
 
 export const About: React.FC = () => {
-  return <h2>About</h2>;
+  const { value, setValue } = useContext(UserContext);
+
+  return (
+    <div>
+      <h2>Home</h2>
+      <div>{value}</div>
+    </div>
+  );
 }
