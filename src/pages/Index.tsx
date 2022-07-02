@@ -1,5 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { UserContext } from "../UserContext";
 
 export const Index: React.FC = () => {
-  return <h2>Index</h2>;
+  const msg = useContext(UserContext);
+
+  return (
+    <div>
+      <h2>Index</h2>
+      <div>{msg}</div>
+    </div>
+    );
 }

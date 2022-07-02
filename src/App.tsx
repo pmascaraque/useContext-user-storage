@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Index } from './pages/Index';
 import { About } from './pages/About';
+import { UserContext } from './UserContext';
 
 const App: React.FC = () => {
   return (
@@ -17,10 +18,13 @@ const App: React.FC = () => {
             </li>
           </ul>
         </nav>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
+
+        <UserContext.Provider value="hello from context">
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </UserContext.Provider>
       </div>
     </Router>
   );
