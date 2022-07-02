@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Index } from './pages/Index';
 import { About } from './pages/About';
 
@@ -17,9 +17,10 @@ const App: React.FC = () => {
             </li>
           </ul>
         </nav>
-
-        <Route path="/" element={<Index />} />
-        <Route path="/about" element={<About />} />
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
       </div>
     </Router>
   );
